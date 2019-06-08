@@ -1,0 +1,62 @@
+---
+title: "Untitled"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(prophet)
+library(dplyr)
+library(ggplot2)
+
+```
+
+
+#### 1. 获取数据
+```{r}
+
+history <- data.frame(
+ds = seq(as.Date('2015-01-01?), as.Date('2016-01-01'), by = 'd'),
+y = sin(1:366/200) + rnorm(366)/10)
+
+```
+
+
+#### 2. make_future_dataframe Make dataframe with future dates for forecasting.
+用法：
+```{r}
+model <- prophet(history) # prophet object 
+future <- make_future_dataframe(model,?periods = 36)
+forecast <- predict(model, future)
+dyplot.prophet(model, forecast, uncertainty = T) # 画图
+
+
+```
+
+
+```{r}
+
+df = cross_validation(model, horizon =1, units = "days", period = 4)
+
+```
+
+
+
+```{r}
+df1 = cross_validation(model, horizon =10, units = ?days", period = 2)
+
+
+```
+
+
+
+
+
+
+
+
+
+
