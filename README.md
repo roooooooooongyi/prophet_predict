@@ -84,5 +84,7 @@ performance_metrics(df = df_cv, metrics = c('rmse', 'mae'), rolling_window = 0.2
 
 受到这种评估时间序列预测方法的启发，可以将这种方法推广到一般时间序列的情况，见下图：
 ![cbcafb6f31cc9f5ef8214ca916674576.png](en-resource://database/3626:1)
+![image](https://github.com/AngelSXD/sxd_first_repository/blob/master/images/20160615165142.png)
+
 
 这种评估方法最大的优势在于，可以**清晰的展现模型在每一个窗口内的预测情况**。
